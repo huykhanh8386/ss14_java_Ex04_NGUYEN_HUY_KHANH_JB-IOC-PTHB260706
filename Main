@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        CandidateService service = new CandidateService();
+        System.out.println("|             HỆ THỐNG XÁC THỰC TUỔI ỨNG VIÊN          |");
+        System.out.print("| [UV 1 - 25 tuổi]: ");
+        try {
+            service.validateAge(25);
+        } catch (InvalidAgeException e) {
+            System.out.println("LỖI: " + e.getMessage());
+        }
+        System.out.print("| [UV 2 - 16 tuổi]: ");
+        try {
+            service.validateAge(16);
+        } catch (InvalidAgeException e) {
+            System.out.println("LỖI: " + e.getMessage());
+        }
+        System.out.print("| [UV 3 - 65 tuổi]: ");
+        try {
+            service.validateAge(65);
+        } catch (InvalidAgeException e) {
+            System.out.println("LỖI: " + e.getMessage());
+        }
+    }
+}
